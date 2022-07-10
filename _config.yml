@@ -36,7 +36,7 @@ parse:
 
 sphinx:
     config:
-        language: "fr"
+        language: fr
         tls_verify: false
         linkcheck_anchors: false
         html_show_copyright: false
