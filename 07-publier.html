@@ -4,11 +4,13 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>7. Publier et diffuser</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
@@ -62,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -86,7 +102,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -173,87 +189,148 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="mailto:contact-guide@services.cnrs.fr">contact</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
-                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/07-publier.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/miti-gt-donnees/guide/issues/new?title=Issue%20on%20page%20%2F07-publier.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
-        title="Mode plein écran"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenu
+            <div class="navbar_extra_footer">
+            <a href="mailto:contact-guide@services.cnrs.fr">contact</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/miti-gt-donnees/guide/issues/new?title=Issue%20on%20page%20%2F07-publier.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/07-publier.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#communiquer-et-documenter">
    7.1. Communiquer et documenter
@@ -342,27 +419,131 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Publier et diffuser</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#communiquer-et-documenter">
+   7.1. Communiquer et documenter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publier-les-metadonnees">
+   7.2. Publier les métadonnées
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-directive-europeenne-inspire">
+     7.2.1. La directive européenne “INSPIRE”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-portails-nationaux-et-europeens">
+     7.2.2. Les portails nationaux et européens
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilisation-de-thesaurus">
+   7.3. Utilisation de thesaurus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilisation-didentifiants-perennes">
+   7.4. Utilisation d’identifiants pérennes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-doi-digital-object-identification">
+     7.4.1. Les DOI : “Digital Object Identification”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-obtenir-des-doi">
+     7.4.2. Comment obtenir des DOI ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retour-dexperiences-dutilisation-de-doi">
+     7.4.3. Retour d’expériences d’utilisation de DOI
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-entrepots-de-donnees">
+   7.5. Les entrepôts de données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vers-des-entrepots-de-donnees-de-confiance-ou-certifies">
+     7.5.1. Vers des entrepôts de données de confiance ou certifiés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entrepots-en-shs">
+     7.5.2. Entrepôts en SHS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deposer-publier-dans-des-entrepots-institutionnels">
+     7.5.3. Déposer/Publier dans des entrepôts institutionnels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-infrastructures-de-recherche-nationales">
+     7.5.4. Les Infrastructures de Recherche nationales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publier-un-datapaper-pour-valoriser-et-expliciter-les-donnees">
+   7.6. Publier un “Datapaper” pour valoriser et expliciter les données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publier-des-donnees-grace-au-web-des-donnees-et-au-web-semantique">
+   7.7. Publier des données grâce au web des données et au web sémantique
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="publier-et-diffuser">
-<span id="publier"></span><h1><span class="section-number">7. </span>Publier et diffuser<a class="headerlink" href="#publier-et-diffuser" title="Lien permanent vers ce titre">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="publier-et-diffuser">
+<span id="publier"></span><h1><span class="section-number">7. </span>Publier et diffuser<a class="headerlink" href="#publier-et-diffuser" title="Lien permanent vers ce titre">#</a></h1>
 <p>Cette dernière étape d’un projet de  recherche représente en quelque sorte la finalité de toute une politique de gestion de données puisqu’elle vise, dans un contexte de Science ouverte, à publier et diffuser les données de manière à ce qu’elles soient bien accessibles et réutilisables selon des formats et des processus interopérables.</p>
 <p>L’accompagnement des  réseaux métiers s’exerce sur le processus de publication des données dans des entrepôts ou des plateformes techniques, pour en permettre l’accès, ainsi que sur la documentation des données avec des métadonnées descriptives provenant de vocabulaires contrôlés et de leurs formats d’exploitation pour en assurer la réutilisabilité. Ainsi, les réseaux travaillent sur l’ensemble des informations (données, métadonnées, modes opératoires, échantillons, publications, visualisation et interfaces graphiques) nécessaires à la mise en œuvre des supports de diffusion et de valorisation les plus pertinents en rapport avec l’objectif du projet initial.</p>
 <p>Cette étape de publication et de diffusion est en outre accompagnée désormais d’une action nécessaire d’identification des données via des identifiants pérennes lors du dépôt dans des entrepôts de données.</p>
-<div class="section" id="communiquer-et-documenter">
-<h2><span class="section-number">7.1. </span>Communiquer et documenter<a class="headerlink" href="#communiquer-et-documenter" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="communiquer-et-documenter">
+<h2><span class="section-number">7.1. </span>Communiquer et documenter<a class="headerlink" href="#communiquer-et-documenter" title="Lien permanent vers ce titre">#</a></h2>
 <p><strong>Finaliser le Plan de Gestion de Données</strong></p>
 <p>Pour rappel, en fin de projet, il ne faut pas oublier de mettre à jour et finaliser la rédaction du plan de gestion de données. Il est nécessaire de s’assurer que les premières informations saisies sont encore valides et effectuer une mise à jour en ajoutant les dernières informations disponibles.</p>
-</div>
-<div class="section" id="publier-les-metadonnees">
-<h2><span class="section-number">7.2. </span>Publier les métadonnées<a class="headerlink" href="#publier-les-metadonnees" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="publier-les-metadonnees">
+<h2><span class="section-number">7.2. </span>Publier les métadonnées<a class="headerlink" href="#publier-les-metadonnees" title="Lien permanent vers ce titre">#</a></h2>
 <p><strong>Utilisation de catalogues de métadonnées</strong></p>
 <p>Les catalogues de métadonnées représentent un moyen cohérent et rigoureux pour décrire et publier des jeux de données. Ils permettent de faciliter la recherche et l’identification des données (F de FAIR).</p>
 <p>Pour être interopérables, ces catalogues s’appuient en général sur des normes pour représenter les métadonnées.
@@ -422,8 +603,8 @@ ANF SIST 2017 Fréjus</p>
 <p>Bernard Debray, Univers, Transport, Interfaces, Nanostructures, Atmosphère et environnement, Molécules<br />
 <a class="reference external" href="https://sist16.sciencesconf.org">Séminaire SIST16 Montpellier</a></p>
 </div>
-<div class="section" id="la-directive-europeenne-inspire">
-<h3><span class="section-number">7.2.1. </span>La directive européenne “INSPIRE”<a class="headerlink" href="#la-directive-europeenne-inspire" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="la-directive-europeenne-inspire">
+<h3><span class="section-number">7.2.1. </span>La directive européenne “INSPIRE”<a class="headerlink" href="#la-directive-europeenne-inspire" title="Lien permanent vers ce titre">#</a></h3>
 <p>La directive <a class="reference external" href="https://www.ecologie.gouv.fr/directive-europeenne-inspire">INSPIRE</a>, élaborée par la Direction générale de l’environnement de la Commission européenne en 2007, vise à établir en Europe une infrastructure de données géographiques pour favoriser la protection de l’environnement, assurer l’interopérabilité entre bases de données et faciliter la diffusion, la disponibilité, l’utilisation et la réutilisation de l’information géographique en Europe. INSPIRE vise ainsi à mieux partager les données de la recherche.</p>
 <p>Marc Leobet, chargé de mission à la Mission information géographique du ministère en charge du développement durable pose, dans cette présentation réalisée en 2013, le cadre de la Directive Inspire. Il présente tout d’abord l’utilité de cette Directive (identification des données, gestion de la confidentialité, les problèmes de conventionnement et la qualité des données), son contexte, les obligations qu’elle induit, le contexte autour de la réutilisation des données du secteur public et l’application de la Directive inspire dans le domaine de la recherche.</p>
 <div class="seealso admonition">
@@ -435,9 +616,9 @@ ANF SIST 2017 Fréjus</p>
 <p>Marc Leobet, Chargé de mission et PCE INSPIRE<br />
 Frédocs2013 -7 au 10 octobre 2013, Aussois</p>
 </div>
-</div>
-<div class="section" id="les-portails-nationaux-et-europeens">
-<h3><span class="section-number">7.2.2. </span>Les portails nationaux et européens<a class="headerlink" href="#les-portails-nationaux-et-europeens" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="les-portails-nationaux-et-europeens">
+<h3><span class="section-number">7.2.2. </span>Les portails nationaux et européens<a class="headerlink" href="#les-portails-nationaux-et-europeens" title="Lien permanent vers ce titre">#</a></h3>
 <p><strong>Les pôles de données nationaux en environnement</strong></p>
 <p>Les catalogues et portails d’accès aux données se matérialisent également au niveau national où une infrastructure de recherche (IR) Data terra a été créée pour accéder aux données spatiales et in situ du système Terre.</p>
 <p>La mission de <a class="reference external" href="https://www.data-terra.org/">l’IR Data Terra</a> consiste à organiser de manière intégrée la diffusion et l’accès aux données, en mettant à disposition les données, les produits et des services relatifs à l’observation du système Terre, via les pôles de données et de services existants :</p>
@@ -470,10 +651,10 @@ Le projet européen Seadatanet vise à élaborer et mettre en place un portail e
 <p>Soumaya Lahbib<br />
 <a class="reference external" href="https://sist18.sciencesconf.org/">Séminaire SIST18 à l’Observatoire de Versailles, 2018</a></p>
 </div>
-</div>
-</div>
-<div class="section" id="utilisation-de-thesaurus">
-<h2><span class="section-number">7.3. </span>Utilisation de thesaurus<a class="headerlink" href="#utilisation-de-thesaurus" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="utilisation-de-thesaurus">
+<h2><span class="section-number">7.3. </span>Utilisation de thesaurus<a class="headerlink" href="#utilisation-de-thesaurus" title="Lien permanent vers ce titre">#</a></h2>
 <p>Un vocabulaire contrôlé est une liste de termes (mots et expressions) soigneusement choisis pour désigner les concepts d’un domaine (un seul terme préférentiel et éventuellement plusieurs entrées non préférentielles). Ces vocabulaires sont regroupés dans des “thésaurus” qui sont des listes organisées de termes, contrôlés et normalisés, (descripteurs et non-descripteurs) représentant les concepts d’un domaine de la connaissance.</p>
 <p>Un thésaurus permet donc d’organiser et de structurer un vocabulaire d’un domaine de connaissances à partir de relations sémantiques entre concepts (de types hiérarchiques ou associatifs) et d’équivalence entre termes. Il réduit donc l’ambiguïté inhérente au langage humain naturel dans lequel différents noms peuvent être attribués à un même concept.</p>
 <p>De nombreux thesaurus existent dans divers domaines scientifiques. Par exemple, dans le domaine environnemental, on utilise fréquemment les thesaurus :</p>
@@ -508,9 +689,9 @@ JrBDD 2015, Sète, mercredi 21/10/2015</p>
 Blandine Nouvel  (Centre Camille Jullian / Frantiq)</p>
 </div>
 <p>Enfin, notons la création du logiciel open source <a class="reference external" href="https://www.mom.fr/ressources-numeriques/opentheso">opentheso</a> qui permet l’élaboration collaborative d’un thésaurus tout comme ThesauForm, mais aussi la gestion de thésaurus multilingue supportant la polyhiérarchie, en conformité avec la norme ISO 25964.</p>
-</div>
-<div class="section" id="utilisation-didentifiants-perennes">
-<h2><span class="section-number">7.4. </span>Utilisation d’identifiants pérennes<a class="headerlink" href="#utilisation-didentifiants-perennes" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="utilisation-didentifiants-perennes">
+<h2><span class="section-number">7.4. </span>Utilisation d’identifiants pérennes<a class="headerlink" href="#utilisation-didentifiants-perennes" title="Lien permanent vers ce titre">#</a></h2>
 <p>Afin d’être cités et réutilisés, les données et documents numériques se doivent de disposer d’un identifiant pérenne pour qu’ils puissent être référencés, visibles et accessibles de manière univoque.</p>
 <p>Il existe différents types d’identifiants pérennes pour toutes sortes d’objets y compris les humains. Cet article de J-L Archimbaud fait le point sur les identifiants des documents numériques et leurs usages :</p>
 <div class="seealso admonition">
@@ -519,8 +700,8 @@ Blandine Nouvel  (Centre Camille Jullian / Frantiq)</p>
 Journées « Conduire et construire un plan de gestion des données : de la base de données à la pérennisation » du réseau CNRS Bases de Données (rBDD) Sète – 22 oct 2015</p>
 </div>
 <p>Il faut aussi noter que dans le domaine de la bio-informatique, des identifiants uniques sont attribués aux enregistrements de séquences DNA ou de protéines. Ils sont nommés <a class="reference external" href="https://en.wikipedia.org/wiki/Accession_number_(bioinformatics)">accession number</a>.</p>
-<div class="section" id="les-doi-digital-object-identification">
-<h3><span class="section-number">7.4.1. </span>Les DOI : “Digital Object Identification”<a class="headerlink" href="#les-doi-digital-object-identification" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="les-doi-digital-object-identification">
+<h3><span class="section-number">7.4.1. </span>Les DOI : “Digital Object Identification”<a class="headerlink" href="#les-doi-digital-object-identification" title="Lien permanent vers ce titre">#</a></h3>
 <p>Dans le domaine des données, les D.O.I (Digital Object Identification) DOI est un identifiant pérenne favorisant le référencement et la citation des jeux de données. Ils permettent de citer un jeu de données homogène de manière univoque et de les lier aux publications ou à tout autre produit de recherche. Ils concourent donc à l’identification, la traçabilité et à l’interopérabilité des données.  Ils garantissent un lien stable à la ressource en ligne et font correspondre en permanence l’identité de la ressource à sa localisation sur le web.</p>
 <p><a class="reference external" href="https://opidor.fr/identifier/">l’INIST du CNRS</a> est l’agence d’attribution de l’identifiant DOI en France pour l’Enseignement Supérieur et Recherche (ESR). Les D.O.I sont obtenus auprès de <a class="reference external" href="https://doi.datacite.org/">l’organisme international “Datacite”</a>.</p>
 <p>L’allocation de D.O.I sur des données implique des devoirs de la part du déposant, qui est de maintenir un lien permanent vers les données identifiées pendant une certaine durée, à travers une page de description (appelée aussi “<em>landing page</em>”) qui permet de fournir les métadonnées principales pour décrire les données et y accéder.</p>
@@ -546,9 +727,9 @@ Frédocs2013 - Gestion et valorisation des données de la recherche -  7 au 10 o
 Mohamed Salah Yahia, Institut de l’information scientifique et technique du CNRS<br />
 <a class="reference external" href="https://sist16.sciencesconf.org">Séminaire SIST16 OSU Oreme Montpellier </a></p>
 </div>
-</div>
-<div class="section" id="comment-obtenir-des-doi">
-<h3><span class="section-number">7.4.2. </span>Comment obtenir des DOI ?<a class="headerlink" href="#comment-obtenir-des-doi" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="comment-obtenir-des-doi">
+<h3><span class="section-number">7.4.2. </span>Comment obtenir des DOI ?<a class="headerlink" href="#comment-obtenir-des-doi" title="Lien permanent vers ce titre">#</a></h3>
 <p>Une unité CNRS a la possibilité de souscrire un contrat avec l’INIST du CNRS pour être détenteur d’un préfixe de DOI qui servira à construire et déposer un DOI.</p>
 <div class="seealso admonition">
 <p class="admonition-title"><a class="reference external" href="https://sist16.sciencesconf.org/data/pages/15_M_Yahia.pdf">Workflow d’attribution de DOI par l’Inist-CNRS</a>  </p>
@@ -562,9 +743,9 @@ Mohamed Salah Yahia, Institut de l’information scientifique et technique du CN
 <p>Annick Battais<br />
 <a class="reference external" href="https://sist19.sciencesconf.org">Séminaire SIST2019 Toulouse 2019</a></p>
 </div>
-</div>
-<div class="section" id="retour-dexperiences-dutilisation-de-doi">
-<h3><span class="section-number">7.4.3. </span>Retour d’expériences d’utilisation de DOI<a class="headerlink" href="#retour-dexperiences-dutilisation-de-doi" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="retour-dexperiences-dutilisation-de-doi">
+<h3><span class="section-number">7.4.3. </span>Retour d’expériences d’utilisation de DOI<a class="headerlink" href="#retour-dexperiences-dutilisation-de-doi" title="Lien permanent vers ce titre">#</a></h3>
 <p>Philippe Techiné nous indique comment il fournit des DOI sur des données océanographiques grâce à un contrat passé avec l’INIST du CNRS qui, en tant que membre de DataCite, peut fournir et attribuer des DOI. Il passe en revue les métadonnées obligatoires et la landing page qui est constituée.</p>
 <div class="seealso admonition">
 <p class="admonition-title"><a class="reference external" href="https://sist16.sciencesconf.org/data/pages/16_P_Techine.pdf">Mise en place d’un DOI sur les données d’un réseau d’observations océanographiques </a>    </p>
@@ -597,10 +778,10 @@ Dans l’atelier traçabilité organisé par RBDD en novembre 2018, MC Quidoz av
 <p>Sophie Pamerlon (Système mondial d’information sur la biodiversité - Global Biodiversity Information Facility), 2015<br />
 RBDD</p>
 </div>
-</div>
-</div>
-<div class="section" id="les-entrepots-de-donnees">
-<h2><span class="section-number">7.5. </span>Les entrepôts de données<a class="headerlink" href="#les-entrepots-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="les-entrepots-de-donnees">
+<h2><span class="section-number">7.5. </span>Les entrepôts de données<a class="headerlink" href="#les-entrepots-de-donnees" title="Lien permanent vers ce titre">#</a></h2>
 <p>Dans un contexte de science ouverte, les acteurs de la recherche s’accordent aujourd’hui pour considérer les données de la recherche comme des produits de la recherche et appellent à mieux les gérer et à les partager. Le partage des données et des connaissances, mais également le partage des logiciels, des méthodes et des processus n’ont de réel bénéfice que s’ils sont accompagnés en amont par une gestion rigoureuse et de qualité des données, basé sur des principes clairs et consensuels.</p>
 <p>Les enjeux liés à la gestion et au partage des données de la recherche nécessitent des outils appropriés communément appelés “Entrepôts de données”. Mais qu’est-ce qu’un entrepôt de données et quelles en sont les principales caractéristiques ? Comment les entrepôts de données contribuent-ils à la gestion et au partage des données ?</p>
 <p>Qu’est-ce qui différencie un entrepôt de données d’une base de données classique dans le contexte de l’ouverture des données ? Quels services peut-on attendre d’un entrepôt de données aux différentes étapes du cycle de vie de la donnée? Comment trouver et choisir un entrepôt de données ? Un certain nombre de ces questions relatives aux entrepôts ont été abordées lors d’une <a class="reference external" href="https://gt-donnees2020.sciencesconf.org/">journée de type Hackaton intitulée “entrepôts de données, comment améliorer le dépôt et le partage des données de la recherche ?”</a>. Cette journée consacrée aux entrepôts de données a permis de cerner les fonctionnalités que l’on se doit d’attendre d’un entrepôt de données FAIR et les conditions d’utilisation de ce type de service.</p>
@@ -634,8 +815,8 @@ ANF rBDD du 5 au 7 novembre 2018 à Sète</p>
 <p>Sylvie Cocaud (INRA)<br />
 <a class="reference external" href="https://anfdonnees2017.sciencesconf.org/">Participer à l’organisation du management des données de la recherche</a>, gestion de contenu et documentation des données - 2017 Vandoeuvre-lès-Nancy</p>
 </div>
-<div class="section" id="vers-des-entrepots-de-donnees-de-confiance-ou-certifies">
-<h3><span class="section-number">7.5.1. </span>Vers des entrepôts de données de confiance ou certifiés<a class="headerlink" href="#vers-des-entrepots-de-donnees-de-confiance-ou-certifies" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="vers-des-entrepots-de-donnees-de-confiance-ou-certifies">
+<h3><span class="section-number">7.5.1. </span>Vers des entrepôts de données de confiance ou certifiés<a class="headerlink" href="#vers-des-entrepots-de-donnees-de-confiance-ou-certifies" title="Lien permanent vers ce titre">#</a></h3>
 <p>Dans le but de pouvoir etre pérennisées et réutilisées, les données ont intérêt à être déposées dans des entrepôts.
 Déposer des données dans des entrepôts nécessite un certain nombre de prérequis pour assurer la qualité des données déposées :</p>
 <ul class="simple">
@@ -663,9 +844,9 @@ Aude Chambodut<br />
 <li><p>Technologie :	implique de fournir l’infrastructure et les capacités nécessaires pour obtenir des services sécurisés, pérennes et fiables.</p></li>
 </ul>
 <p>Les principes TRUST donnent aux utilisateurs l’assurance qu’ils bénéficient d’entrepôts sûrs avec des moyens durables.</p>
-</div>
-<div class="section" id="entrepots-en-shs">
-<h3><span class="section-number">7.5.2. </span>Entrepôts en SHS<a class="headerlink" href="#entrepots-en-shs" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="entrepots-en-shs">
+<h3><span class="section-number">7.5.2. </span>Entrepôts en SHS<a class="headerlink" href="#entrepots-en-shs" title="Lien permanent vers ce titre">#</a></h3>
 <p>En sciences humaines et sociales, NAKALA est un service proposé par <a class="reference external" href="https://www.huma-num.fr/">l’infrastructure de Recherches “Huma-Num”</a> pour déposer, documenter et diffuser les données de la recherche. Il permet de rendre les données interopérables et de diffuser très simplement, dans des publications électroniques, les données déposées dans NAKALA.</p>
 <p>L’entrepôt de données de recherche NAKALA, est destiné à accueillir, conserver et rendre visibles et accessibles les données de recherche selon les principes FAIR. Il permet d’enregistrer des données numériques de tout type (fichiers texte, son, images, vidéo), de les décrire en vue de les exposer et les rendre réutilisables et citables. Ainsi le dépôt de données dans NAKALA va offrir des services sur plusieurs étapes du cycle de vie de vos données, sur la préservation, la publication et la réutilisation. Le service NAKALA offre deux niveaux de préservation :</p>
 <ul class="simple">
@@ -678,19 +859,19 @@ Aude Chambodut<br />
 <li><p><a class="reference external" href="https://doranum.fr/2016/10/12/nakala-plate-forme-pour-deposer-documenter-et-diffuser-les-donnees-de-la-recherche/">Utilisation de nakala pour deposer et diffuser les donnees de larecherche</a></p></li>
 <li><p><a class="reference external" href="https://www.huma-num.fr/ressources/videos">Pour découvrir pas à pas l’interface de NAKALA ainsi que les modalités de l’authentification</a></p></li>
 </ul>
-</div>
-<div class="section" id="deposer-publier-dans-des-entrepots-institutionnels">
-<h3><span class="section-number">7.5.3. </span>Déposer/Publier dans des entrepôts institutionnels<a class="headerlink" href="#deposer-publier-dans-des-entrepots-institutionnels" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="deposer-publier-dans-des-entrepots-institutionnels">
+<h3><span class="section-number">7.5.3. </span>Déposer/Publier dans des entrepôts institutionnels<a class="headerlink" href="#deposer-publier-dans-des-entrepots-institutionnels" title="Lien permanent vers ce titre">#</a></h3>
 <p><strong>Déposer dans des Entrepôts… lesquels? comment?</strong></p>
 <p>Il existe beaucoup d’entrepôts de données, de nature et de qualité différentes. Certains sont des entrepôts Institutionnels (Portail Data INRAE, DataSuds, Didomena, … ), d’autres sont thématiques (PANGAEA pour les données environnementales, SEANOE spécifique aux données marines …) ou généralistes (Dryad, Zenodo, …). Pour aider à trouver et à choisir un entrepôt, des catalogues sont disponibles : <a class="reference external" href="https://cat.opidor.fr/">https://cat.opidor.fr/</a>, <a class="reference external" href="https://www.re3data.org/">https://www.re3data.org/</a> et <a class="reference external" href="https://fairsharing.org/databases/">https://fairsharing.org/databases/</a>. Des entrepôts spécifiques peuvent être suggérés (ou imposés) par le journal dans lequel on dépose un article, mais aussi par le financeur, le consortium du projet ou l’institution dans laquelle on travaille. Il est conseillé de vérifier si l’établissement dans lequel on travaille a mis en place une politique de partage de données et de s’y référer pour éviter la dispersion des données tous azimuts.</p>
-</div>
-<div class="section" id="les-infrastructures-de-recherche-nationales">
-<h3><span class="section-number">7.5.4. </span>Les Infrastructures de Recherche nationales<a class="headerlink" href="#les-infrastructures-de-recherche-nationales" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="les-infrastructures-de-recherche-nationales">
+<h3><span class="section-number">7.5.4. </span>Les Infrastructures de Recherche nationales<a class="headerlink" href="#les-infrastructures-de-recherche-nationales" title="Lien permanent vers ce titre">#</a></h3>
 <p>Le <a class="reference external" href="https://www.enseignementsup-recherche.gouv.fr">ministère  de l’Enseignement supérieur, de la Recherche et de l’Innovation</a> tient à jour la liste officielle des <a class="reference external" href="https://www.enseignementsup-recherche.gouv.fr/cid70554/la-feuille-de-route-nationale-des-infrastructures-de-recherche.html">Infrastructures de Recherche nationales</a>.</p>
-</div>
-</div>
-<div class="section" id="publier-un-datapaper-pour-valoriser-et-expliciter-les-donnees">
-<h2><span class="section-number">7.6. </span>Publier un “Datapaper” pour valoriser et expliciter les données<a class="headerlink" href="#publier-un-datapaper-pour-valoriser-et-expliciter-les-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="publier-un-datapaper-pour-valoriser-et-expliciter-les-donnees">
+<h2><span class="section-number">7.6. </span>Publier un “Datapaper” pour valoriser et expliciter les données<a class="headerlink" href="#publier-un-datapaper-pour-valoriser-et-expliciter-les-donnees" title="Lien permanent vers ce titre">#</a></h2>
 <p>Le data paper est un article scientifique sur les données : il permet de décrire un jeu de données de recherche (data, dataset), à l’aide d’informations plus précises et détaillées que celles qu’on peut trouver dans un “plan de gestion de données” (DMP), notamment en insistant sur :</p>
 <ul class="simple">
 <li><p>Les aspects méthodologiques,</p></li>
@@ -777,9 +958,9 @@ Joachim Schöpfel, Université Lille 3 – GERiiCO</p>
 <p>Wilfried Heintz, UMR 1201 Dynafor<br />
 Storage Day 2018, Paris.</p>
 </div>
-</div>
-<div class="section" id="publier-des-donnees-grace-au-web-des-donnees-et-au-web-semantique">
-<h2><span class="section-number">7.7. </span>Publier des données grâce au web des données et au web sémantique<a class="headerlink" href="#publier-des-donnees-grace-au-web-des-donnees-et-au-web-semantique" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="publier-des-donnees-grace-au-web-des-donnees-et-au-web-semantique">
+<h2><span class="section-number">7.7. </span>Publier des données grâce au web des données et au web sémantique<a class="headerlink" href="#publier-des-donnees-grace-au-web-des-donnees-et-au-web-semantique" title="Lien permanent vers ce titre">#</a></h2>
 <p>Selon Wikipedia, « le Web sémantique est une extension du Web standardisée par le World Wide Web Consortium (W3C). Ces standards encouragent l’utilisation de formats de données et de protocoles d’échange normés sur le Web, en s’appuyant sur le modèle Resource Description Framework (RDF). Le Web sémantique est par certains qualifié de web 3.0.»</p>
 <p>Selon Wikipedia, « le Web des données (linked data, en anglais) est une initiative du W3C (Consortium World Wide Web) visant à favoriser la publication de données structurées sur le Web, non pas sous la forme de silos de données isolés les uns des autres, mais en les reliant entre elles pour constituer un réseau global d’informations.»</p>
 <p>Tim Berners-Lee (inventeur du Web et directeur du W3C), qui supervise le développement des technologies communes du Web sémantique a défini le web sémantique comme « une toile de données, données qui peuvent être traitées directement et indirectement par des machines pour aider leurs utilisateurs à créer de nouvelles connaissances ».</p>
@@ -816,8 +997,8 @@ Action nationale de formation RBDD 2015</p>
 <dd><p><a class="reference external" href="https://datascience.codata.org/articles/10.5334/dsj-2020-005/">https://datascience.codata.org/articles/10.5334/dsj-2020-005/</a></p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -841,9 +1022,11 @@ Action nationale de formation RBDD 2015</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="06-archiver.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -859,32 +1042,34 @@ Action nationale de formation RBDD 2015</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By l'Atelier Données – groupe de travail inter réseaux de la MITI – CNRS<br/>
+  
+    Last updated on 10 juil. 2022.<br/>
+    <div class="extra_footer">
       <p>
-        
-          Par l'Atelier Données – groupe de travail inter réseaux de la MITI – CNRS<br/>
-        
-          Dernière mise à jour le 08 déc. 2021.<br/>
-          <div class="extra_footer">
-            <p>
 Ce guide est mis à disposition selon les termes de la Licence <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.
 </p>
 
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

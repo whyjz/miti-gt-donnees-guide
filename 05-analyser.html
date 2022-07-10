@@ -4,11 +4,13 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5. Analyser</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +20,37 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
@@ -62,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -86,7 +102,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -173,87 +189,148 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="mailto:contact-guide@services.cnrs.fr">contact</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
-                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/05-analyser.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/miti-gt-donnees/guide/issues/new?title=Issue%20on%20page%20%2F05-analyser.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
-        title="Mode plein écran"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenu
+            <div class="navbar_extra_footer">
+            <a href="mailto:contact-guide@services.cnrs.fr">contact</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/miti-gt-donnees/guide/issues/new?title=Issue%20on%20page%20%2F05-analyser.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/05-analyser.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plateformes-de-traitement-de-donnees">
    5.1. Plateformes de traitement de données
@@ -310,17 +387,89 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Analyser</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plateformes-de-traitement-de-donnees">
+   5.1. Plateformes de traitement de données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outils-pour-lanalyse-des-donnees">
+   5.2. Outils pour l’analyse des données
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langages-de-programmation">
+     5.2.1. Langages de programmation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#approches-methodologiques">
+     5.2.2. Approches méthodologiques
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualisation-des-donnees-numeriques">
+     5.2.3. Visualisation des données numériques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mettre-en-place-des-methodes-danalyse-et-des-chaines-logicielles">
+   5.3. Mettre en place des méthodes d’analyse et des chaînes logicielles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qualite-logicielle">
+     5.3.1. Qualité logicielle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retours-dexperience">
+     5.3.2. Retours d’expérience
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimiser-lutilisation-des-ressources">
+   5.4. Optimiser l’utilisation des ressources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#traitements-semantiques-linguistiques">
+   5.5. Traitements sémantiques/ linguistiques
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="analyser">
-<span id="id1"></span><h1><span class="section-number">5. </span>Analyser<a class="headerlink" href="#analyser" title="Lien permanent vers ce titre">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="analyser">
+<span id="id1"></span><h1><span class="section-number">5. </span>Analyser<a class="headerlink" href="#analyser" title="Lien permanent vers ce titre">#</a></h1>
 <p>Derrière le terme “analyser” s’entend l’extraction de l’information
 des données le plus souvent par l’utilisation de puissance de calcul.
 Cela recouvre de nombreux types de techniques (calcul intensif,
@@ -341,8 +490,8 @@ en passant par l’organisation des développements et la reproductibilité,
 détaillée dans la section <a class="reference internal" href="11-reproductibilite.html"><span class="doc std std-doc">Reproductibilité</span></a>
 de ce guide. Ils incluent aussi très souvent des retours d’expérience
 particulièrement riches.</p>
-<div class="section" id="plateformes-de-traitement-de-donnees">
-<h2><span class="section-number">5.1. </span>Plateformes de traitement de données<a class="headerlink" href="#plateformes-de-traitement-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="plateformes-de-traitement-de-donnees">
+<h2><span class="section-number">5.1. </span>Plateformes de traitement de données<a class="headerlink" href="#plateformes-de-traitement-de-donnees" title="Lien permanent vers ce titre">#</a></h2>
 <p>De nombreuses ressources sont disponibles, à différentes échelles,
 pour analyser et traiter des données.  De façon générale, on distingue:</p>
 <ul class="simple">
@@ -357,14 +506,14 @@ Il est souvent plus pertinent de s’adresser à des spécialistes qui
 sauront vous orienter. En général, les mésocentres de calcul, grâce
 à leur proximité et à leur connaissance du domaine, sont de bons
 conseils. Une liste est disponible sur le <a class="reference external" href="https://calcul.math.cnrs.fr/pages/mesocentres_en_france.html">site du réseau Calcul</a>.</p>
-</div>
-<div class="section" id="outils-pour-lanalyse-des-donnees">
-<h2><span class="section-number">5.2. </span>Outils pour l’analyse des données<a class="headerlink" href="#outils-pour-lanalyse-des-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="outils-pour-lanalyse-des-donnees">
+<h2><span class="section-number">5.2. </span>Outils pour l’analyse des données<a class="headerlink" href="#outils-pour-lanalyse-des-donnees" title="Lien permanent vers ce titre">#</a></h2>
 <p>Il existe de très nombreux outils permettant d’analyser ses données,
 allant du langage de programmation au workflow de traitement en
 passant par les logiciels de visualisation.</p>
-<div class="section" id="langages-de-programmation">
-<h3><span class="section-number">5.2.1. </span>Langages de programmation<a class="headerlink" href="#langages-de-programmation" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="langages-de-programmation">
+<h3><span class="section-number">5.2.1. </span>Langages de programmation<a class="headerlink" href="#langages-de-programmation" title="Lien permanent vers ce titre">#</a></h3>
 <p>Certains langages de programmation sont plus particulièrement
 utilisés pour l’analyse de données. En dehors du langage R spécifique
 aux statistiques et à la science des données, l’écosystème s’enrichit
@@ -399,9 +548,9 @@ qui facilite l’exécution massive de calculs sur des données distribuées.</p
 <p class="admonition-title"><a class="reference external" href="https://jcad2019.sciencesconf.org/data/20191009_JCAD2019TutoDaskJobArray.pdf">Simulation paramétrique : Passez d’un job array à Dask</a></p>
 <p>Guillaume Eynard-Bontemps (CNES), <a class="reference external" href="https://jcad2019.sciencesconf.org">JCAD 2019, Toulouse</a>.</p>
 </div>
-</div>
-<div class="section" id="approches-methodologiques">
-<h3><span class="section-number">5.2.2. </span>Approches méthodologiques<a class="headerlink" href="#approches-methodologiques" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="approches-methodologiques">
+<h3><span class="section-number">5.2.2. </span>Approches méthodologiques<a class="headerlink" href="#approches-methodologiques" title="Lien permanent vers ce titre">#</a></h3>
 <p>L’analyse des données ne concerne pas uniquement les modèles
 statistiques.  De nombreux domaines appliqués reposent sur l’analyse
 de données géométriques: médecine, neurosciences, sismique,
@@ -454,9 +603,9 @@ journées et conférences sont organisées sur le sujet. En particulier,
 il fait l’objet de sessions spéciales lors des Journées Développement
 (Jdev) de <a class="reference external" href="http://devlog.cnrs.fr/jdev2020/t8">2020</a> et
 <a class="reference external" href="http://devlog.cnrs.fr/jdev2017/t7">2017</a>.</p>
-</div>
-<div class="section" id="visualisation-des-donnees-numeriques">
-<h3><span class="section-number">5.2.3. </span>Visualisation des données numériques<a class="headerlink" href="#visualisation-des-donnees-numeriques" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="visualisation-des-donnees-numeriques">
+<h3><span class="section-number">5.2.3. </span>Visualisation des données numériques<a class="headerlink" href="#visualisation-des-donnees-numeriques" title="Lien permanent vers ce titre">#</a></h3>
 <p>Un des outils d’analyse les plus utilisés est la visualisation des
 données. Cependant cette visualisation peut s’avérer particulièrement
 délicate dans le cadre de très gros volumes de données, et nécessite
@@ -474,10 +623,10 @@ production de données : formats d’archivage, technique d’analyse,
 cycle de vie ainsi que les outils de visualisation avancés
 (visualisation in situ, temps réel, web).</p>
 <p>La visualisation des données est également au coeur des problématiques des utilisateurs du calcul intensif. Le projet européen PRACE sur le calcul intensif propose des formations spécifiques, en particulier sur les outils de la <a class="reference external" href="https://materials.prace-ri.eu/view/divisions/visualisation.html">visualisation scientifique</a>.</p>
-</div>
-</div>
-<div class="section" id="mettre-en-place-des-methodes-danalyse-et-des-chaines-logicielles">
-<h2><span class="section-number">5.3. </span>Mettre en place des méthodes d’analyse et des chaînes logicielles<a class="headerlink" href="#mettre-en-place-des-methodes-danalyse-et-des-chaines-logicielles" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="mettre-en-place-des-methodes-danalyse-et-des-chaines-logicielles">
+<h2><span class="section-number">5.3. </span>Mettre en place des méthodes d’analyse et des chaînes logicielles<a class="headerlink" href="#mettre-en-place-des-methodes-danalyse-et-des-chaines-logicielles" title="Lien permanent vers ce titre">#</a></h2>
 <p>L’analyse des données peut nécessiter la mise en place d’un workflow
 de traitement utilisant des chaînes logicielles. Il existe des
 environnements virtuels de recherche (VRE Virtual Research Environment)
@@ -552,8 +701,8 @@ notebooks pour la pédagogie et la formation.</p>
 <p>Arnaud RENARD, Université de Reims Champagne-Ardenne
 <a class="reference external" href="https://jcad2018.sciencesconf.org">JCAD 2018</a>, Lyon.</p>
 </div>
-<div class="section" id="qualite-logicielle">
-<h3><span class="section-number">5.3.1. </span>Qualité logicielle<a class="headerlink" href="#qualite-logicielle" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="qualite-logicielle">
+<h3><span class="section-number">5.3.1. </span>Qualité logicielle<a class="headerlink" href="#qualite-logicielle" title="Lien permanent vers ce titre">#</a></h3>
 <p>Ces chaînes de traitement sont très souvent associées à des instruments
 complexes et nécessitent ainsi de s’interfacer parfaitement avec
 le reste de l’instrument.  Dans ce contexte, il convient d’assurer
@@ -585,9 +734,9 @@ les concepts associés à la qualité logicielle :</p>
 <p class="admonition-title"><a class="reference external" href="https://jt-aql.sciencesconf.org/data/program/qualite_nanosat_v2_CG.pdf">Qualité Logiciel dans un projet de Nanosatellite</a></p>
 <p>Colin Gonzalez, AstroParticules et Cosmologie,  Journée thématique Assurance Qualité Logiciel 2019, Paris.</p>
 </div>
-</div>
-<div class="section" id="retours-dexperience">
-<h3><span class="section-number">5.3.2. </span>Retours d’expérience<a class="headerlink" href="#retours-dexperience" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="retours-dexperience">
+<h3><span class="section-number">5.3.2. </span>Retours d’expérience<a class="headerlink" href="#retours-dexperience" title="Lien permanent vers ce titre">#</a></h3>
 <p>Dans le domaine environnemental, les chaines logicielles sont également mises en place pour automatiser et enchainer un certain nombre de traitements comme:</p>
 <ul class="simple">
 <li><p>le contrôle qualité basé sur des paramètres physiques de l’instrument</p></li>
@@ -614,10 +763,10 @@ des mises en oeuvre de chaîne logicielle d’analyse de données:</p>
 <p>David Wolyniec, OSU Grenoble - Jonathan Schaeffer, OSU Grenoble<br />
 <a class="reference external" href="https://sist16.sciencesconf.org/">SIST16 OSU OREME 2016, Montpellier</a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="optimiser-lutilisation-des-ressources">
-<h2><span class="section-number">5.4. </span>Optimiser l’utilisation des ressources<a class="headerlink" href="#optimiser-lutilisation-des-ressources" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="optimiser-lutilisation-des-ressources">
+<h2><span class="section-number">5.4. </span>Optimiser l’utilisation des ressources<a class="headerlink" href="#optimiser-lutilisation-des-ressources" title="Lien permanent vers ce titre">#</a></h2>
 <p>L’analyse des données peut nécessiter l’usage de ressources assez
 massives en termes de puissance et de nombre, d’autant plus que la
 volumétrie des données a tendance à augmenter fortement.</p>
@@ -659,9 +808,9 @@ Conf EcoInfo 2017, Grenoble.</p>
 <p>Thomas Ledoux, Ecole des Mines de Nantes
 Conf EcoInfo 2017, Grenoble.</p>
 </div>
-</div>
-<div class="section" id="traitements-semantiques-linguistiques">
-<h2><span class="section-number">5.5. </span>Traitements sémantiques/ linguistiques<a class="headerlink" href="#traitements-semantiques-linguistiques" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="traitements-semantiques-linguistiques">
+<h2><span class="section-number">5.5. </span>Traitements sémantiques/ linguistiques<a class="headerlink" href="#traitements-semantiques-linguistiques" title="Lien permanent vers ce titre">#</a></h2>
 <p>L’accroissement massif de la production scientifique (données et
 publications) et la multitude de canaux de diffusion existants
 appellent au cœur des activités de recherche, la mise en place de
@@ -744,8 +893,8 @@ qu’ISTEX, OPENAIRE et CORE.</p>
 <p>Laurence El Khoury (DIST-CNRS), Stéphane Schneider (INIST – CNRS)<br />
 Frédocs2018 - Démarches innovantes en IST : expérimenter, proposer (se) réinventer,  2018, Albi</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -769,9 +918,11 @@ Frédocs2018 - Démarches innovantes en IST : expérimenter, proposer (se) réin
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="04-traiter.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -787,32 +938,34 @@ Frédocs2018 - Démarches innovantes en IST : expérimenter, proposer (se) réin
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By l'Atelier Données – groupe de travail inter réseaux de la MITI – CNRS<br/>
+  
+    Last updated on 10 juil. 2022.<br/>
+    <div class="extra_footer">
       <p>
-        
-          Par l'Atelier Données – groupe de travail inter réseaux de la MITI – CNRS<br/>
-        
-          Dernière mise à jour le 08 déc. 2021.<br/>
-          <div class="extra_footer">
-            <p>
 Ce guide est mis à disposition selon les termes de la Licence <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.
 </p>
 
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
