@@ -1,7 +1,10 @@
 name: deploy
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
   # Trigger the workflow on push to main branch
   push:
     branches:
